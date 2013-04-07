@@ -1,0 +1,6 @@
+class neuron{
+
+public:
+    neuron();
+
+};
