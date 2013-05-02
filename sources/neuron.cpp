@@ -54,4 +54,6 @@ double neuron::outFunction(double sum){
     return res;
 }
 
-
+void neuron::setOut(double value){
+    this->out = value;
+}

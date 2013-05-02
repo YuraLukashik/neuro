@@ -3,3 +3,15 @@
 	<iostream>
 	<neuron.h>
 
+1367478373 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
+	<neuron.h>
+	<vector>
+	<cmath>
+
+1367478345 /home/yura/Desktop/OLD/neuro/headers/neuron.h
+	<vector>
+
+1367478560 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
+	<iostream>
+	<neuron.h>
+

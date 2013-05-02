@@ -20,6 +20,7 @@ public:
     double simulate();
 
     unsigned int inputsCount();
+    void setOut(double value);
     double getWeight(int number);
     void setWeight(int number,double value);
     neuron* getInputNeuron(int number);
