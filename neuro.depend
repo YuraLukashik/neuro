@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1365332442 source:/home/yura/Desktop/neuro/sources/main.cpp
+1365335601 source:/home/yura/Desktop/neuro/sources/main.cpp
 	<iostream>
+	<neuron.h>
 
