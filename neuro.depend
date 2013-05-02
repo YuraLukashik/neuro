@@ -21,11 +21,13 @@
 	<neuron.h>
 	<string>
 
-1367510688 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
+1367514478 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
 	<vector>
 	<string>
 	<net.h>
 	<fstream>
 	<sstream>
 	<iostream>
+	<queue>
+	<set>
 
