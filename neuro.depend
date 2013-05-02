@@ -8,10 +8,23 @@
 	<vector>
 	<cmath>
 
-1367478345 /home/yura/Desktop/OLD/neuro/headers/neuron.h
+1367480238 /home/yura/Desktop/OLD/neuro/headers/neuron.h
 	<vector>
 
-1367478560 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
+1367481105 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
 	<iostream>
+	<net.h>
+
+1367480011 /home/yura/Desktop/OLD/neuro/headers/net.h
+	<vector>
 	<neuron.h>
+	<string>
+
+1367481510 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
+	<vector>
+	<string>
+	<net.h>
+	<fstream>
+	<sstream>
+	<iostream>
 

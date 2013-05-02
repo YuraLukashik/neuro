@@ -1,10 +1,11 @@
 #include <iostream>
-#include <neuron.h>
+#include <net.h>
 
 using namespace std;
 
 int main()
 {
-    //cout << "Hello world!" << endl;
+    net q;
+    q.loadFromFile("123.txt");
     return 0;
 }
