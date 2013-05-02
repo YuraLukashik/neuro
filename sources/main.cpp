@@ -6,6 +6,7 @@ using namespace std;
 int main()
 {
     net q;
-    q.loadFromFile("123.txt");
+    q.loadFromFile("data/simple.nw");
+    q.saveToFile("data/simpleCopy.nw");
     return 0;
 }

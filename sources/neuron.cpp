@@ -1,6 +1,7 @@
 #include <neuron.h>
 #include <vector>
 #include <cmath>
+#include <iostream>
 
 #define ifInRange(value,left,right) if ((value)>=(left)&&(value)<=(right))
 
@@ -19,10 +20,12 @@ void neuron::addInput(neuron* input,double weight){
 }
 
 double neuron::simulate(){
+    if (inputs.size()==0) return out;
     double sum = 0;
     for (unsigned i=0;i<inputs.size();i++)
-        sum += inputs[i].first->getOut() * inputs[i].second;
+        sum += inputs[i].first->simulate() * inputs[i].second;
     out = outFunction(sum);
+    cout << out << endl;
     return out;
 }
 
@@ -50,10 +53,19 @@ void neuron::setInputNeuron(int number,neuron* newNewron){
 
 double neuron::outFunction(double sum){
     double res;
-    res = 1./(1.+exp(sum));
+    res = 1./(1.+exp(sum))-0.5;
     return res;
 }
 
 void neuron::setOut(double value){
     this->out = value;
+}
+
+void neuron::setPosition(int x,int y){
+    this->position.first = x;
+    this->position.second = y;
+}
+
+pair<int,int> neuron::getPosition(){
+    return this->position;
 }

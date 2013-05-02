@@ -3,24 +3,25 @@
 	<iostream>
 	<neuron.h>
 
-1367478373 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
+1367513075 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
 	<neuron.h>
 	<vector>
 	<cmath>
+	<iostream>
 
-1367480238 /home/yura/Desktop/OLD/neuro/headers/neuron.h
+1367512984 /home/yura/Desktop/OLD/neuro/headers/neuron.h
 	<vector>
 
-1367481105 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
+1367513339 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
 	<iostream>
 	<net.h>
 
-1367480011 /home/yura/Desktop/OLD/neuro/headers/net.h
+1367513434 /home/yura/Desktop/OLD/neuro/headers/net.h
 	<vector>
 	<neuron.h>
 	<string>
 
-1367481510 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
+1367510688 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
 	<vector>
 	<string>
 	<net.h>
