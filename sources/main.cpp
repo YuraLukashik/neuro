@@ -7,6 +7,7 @@ int main()
 {
     net q;
     q.loadFromFile("data/simple.nw");
-    q.saveToFile("data/simpleCopy.nw");
+    example ex("data/example1.ex");
+    cout << q.simulateFromExample(ex);
     return 0;
 }

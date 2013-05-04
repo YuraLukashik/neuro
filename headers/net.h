@@ -1,5 +1,6 @@
 #include <vector>
 #include <neuron.h>
+#include <example.h>
 #include <string>
 
 using namespace std;
@@ -19,4 +20,6 @@ public:
     double simulate();
     void setConnectionsCount(int count);
     int getConnectionsCount();
+    double simulateFromExample(example ex);
+    double train(example ex);
 };

@@ -25,7 +25,6 @@ double neuron::simulate(){
     for (unsigned i=0;i<inputs.size();i++)
         sum += inputs[i].first->simulate() * inputs[i].second;
     out = outFunction(sum);
-    cout << out << endl;
     return out;
 }
 
@@ -53,7 +52,7 @@ void neuron::setInputNeuron(int number,neuron* newNewron){
 
 double neuron::outFunction(double sum){
     double res;
-    res = 1./(1.+exp(sum))-0.5;
+    res = 1./(1.+exp(-sum))-0.5;
     return res;
 }
 
@@ -68,4 +67,16 @@ void neuron::setPosition(int x,int y){
 
 pair<int,int> neuron::getPosition(){
     return this->position;
+}
+
+void neuron::clearTrainingData(){
+    sigma = 0;
+    delta = 0;
+    childSigmas.resize(0);
+}
+
+void neuron::correctWeights(){
+    for (int i=0;i<inputs.size();i++){
+        inputs[i].second = inputs[i].second + 0.5*1*sigma*inputs[i].first->getOut();
+    }
 }

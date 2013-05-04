@@ -10,22 +10,29 @@ private:
     double out;
     pair <int,int> position;
 
+    //data for training
+    double delta;
+    double sigma;
+    vector <double> childSigmas;
+
     //private functions
     double outFunction(double sum);
 
 public:
     neuron();
     double getOut();
+    void setOut(double value);
     void addInput(neuron* input,double weight);
     double simulate();
 
     unsigned int inputsCount();
-    void setOut(double value);
     double getWeight(int number);
     void setWeight(int number,double value);
     neuron* getInputNeuron(int number);
     void setInputNeuron(int number,neuron* newNeuron);
     void setPosition(int x,int y);
     pair<int,int> getPosition();
+    void clearTrainingData();
+    void correctWeights();
 
 };

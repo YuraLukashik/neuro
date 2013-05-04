@@ -72,7 +72,20 @@ double net::simulate(){
     for (int i=0;i<neurons[neurons.size()-1].size();++i){
         neurons[neurons.size()-1][i].simulate();
     }
-    cout << neurons[neurons.size()-1][0].getOut();
+    return neurons[neurons.size()-1][0].getOut();
+}
+
+double net::simulateFromExample(example ex){
+    if (neurons.size()==0) return 0.;
+    if (neurons[0].size()!=ex.getInputsCount()) return 0.;
+    for (int i=0;i<neurons[0].size();++i){
+        neurons[0][i].setOut(ex.getInpunt(i));
+    }
+    return this->simulate();
+}
+
+double net::train(example ex){
+    this->simulateFromExample(ex);
 }
 
 void net::setConnectionsCount(int count){
@@ -87,3 +100,4 @@ int net::getLayersCount()
 {
     return neurons.size();
 }
+
