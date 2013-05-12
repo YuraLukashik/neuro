@@ -35,11 +35,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/example.h" />
 		<Unit filename="headers/net.h" />
 		<Unit filename="headers/neuron.h" />
+		<Unit filename="headers/trainer.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="sources/example.cpp" />
 		<Unit filename="sources/main.cpp" />
 		<Unit filename="sources/net.cpp" />
 		<Unit filename="sources/neuron.cpp" />
+		<Unit filename="sources/trainer.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

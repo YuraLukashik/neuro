@@ -13,7 +13,7 @@ private:
     //data for training
     double delta;
     double sigma;
-    vector <double> childSigmas;
+    vector <pair<double,double> > childSigmas;
 
     //private functions
     double outFunction(double sum);
@@ -33,6 +33,8 @@ public:
     void setPosition(int x,int y);
     pair<int,int> getPosition();
     void clearTrainingData();
-    void correctWeights();
+    void correctWeights(bool recalc);
+    void setSigma(double val);
+    void addChildSigma(pair<double,double> sigma);
 
 };

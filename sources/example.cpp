@@ -31,6 +31,7 @@ double example::getOutput(int number){
 
 void example::loadFromFile(string fileName){
     ifstream fcin(fileName.c_str());
+    if (!fcin) return;
     int inpCount,outCount;
     fcin >> inpCount >> outCount;
     inputs.resize(inpCount);

@@ -52,7 +52,7 @@ void neuron::setInputNeuron(int number,neuron* newNewron){
 
 double neuron::outFunction(double sum){
     double res;
-    res = 1./(1.+exp(-sum))-0.5;
+    res = 1./(1.+exp(-sum));
     return res;
 }
 
@@ -75,8 +75,27 @@ void neuron::clearTrainingData(){
     childSigmas.resize(0);
 }
 
-void neuron::correctWeights(){
+void neuron::setSigma(double val){
+    sigma = val;
+}
+
+void neuron::addChildSigma(pair<double,double> sigma){
+    this->childSigmas.push_back(sigma);
+}
+
+void neuron::correctWeights(bool recalc){
+    if (recalc){
+        double sum = 0;
+        for (int i=0;i<childSigmas.size();++i)
+            sum += childSigmas[i].first*childSigmas[i].second;
+        this->sigma = this->out*(1-this->out)*sum;
+    }
+    for (int i=0;i<inputs.size();++i){
+        inputs[i].first->addChildSigma(make_pair(this->sigma,inputs[i].second));
+    }
+    this->childSigmas.resize(0);
+
     for (int i=0;i<inputs.size();i++){
-        inputs[i].second = inputs[i].second + 0.5*1*sigma*inputs[i].first->getOut();
+        inputs[i].second = inputs[i].second + sigma*inputs[i].first->getOut();
     }
 }

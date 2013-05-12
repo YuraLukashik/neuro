@@ -1,3 +1,6 @@
+#ifndef EXAMPLE_H_INCLUDED
+#define EXAMPLE_H_INCLUDED
+
 #include <vector>
 #include <string>
 
@@ -19,3 +22,4 @@ public:
     double getOutput(int number);
     void loadFromFile(string fileName);
 };
+#endif

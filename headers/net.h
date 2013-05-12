@@ -1,7 +1,10 @@
+#ifndef NET_H_INCLUDED
+#define NET_H_INCLUDED
+
 #include <vector>
 #include <neuron.h>
-#include <example.h>
 #include <string>
+#include <example.h>
 
 using namespace std;
 
@@ -17,9 +20,10 @@ public:
     void loadFromFile(string fileName);
     void saveToFile(string fileName);
     int getLayersCount();
-    double simulate();
+    vector<double> simulate();
     void setConnectionsCount(int count);
     int getConnectionsCount();
-    double simulateFromExample(example ex);
+    vector<double> simulateFromExample(example ex);
     double train(example ex);
 };
+#endif
