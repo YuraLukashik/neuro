@@ -1,5 +1,6 @@
 #include <example.h>
 #include <fstream>
+#include <iostream>
 #define ifInRange(value,left,right) if ((value)>=(left)&&(value)<=(right))
 
 using namespace std;
@@ -29,9 +30,10 @@ double example::getOutput(int number){
     return 0.;
 }
 
-void example::loadFromFile(string fileName){
+bool example::loadFromFile(string fileName){
+    try{
     ifstream fcin(fileName.c_str());
-    if (!fcin) return;
+    if (!fcin) return false;
     int inpCount,outCount;
     fcin >> inpCount >> outCount;
     inputs.resize(inpCount);
@@ -41,4 +43,8 @@ void example::loadFromFile(string fileName){
     for (int i=0;i<outCount;++i)
         fcin >> outputs[i];
     fcin.close();
+    }
+    catch(...){
+        cout << "File is incorrect";
+    }
 }

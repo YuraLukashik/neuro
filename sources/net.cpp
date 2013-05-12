@@ -16,6 +16,7 @@ net::net()
 
 void net::loadFromFile(string fileName)
 {
+    try{
     ifstream fcin(fileName.c_str());
     if (!fcin) return;
     int layersCount;
@@ -41,9 +42,14 @@ void net::loadFromFile(string fileName)
         neurons[l2-1][v2-1].addInput(&neurons[l1-1][v1-1],w);
     }
     fcin.close();
+    }
+    catch(...){
+        cout << "file is incorrect!";
+    }
 }
 
 void net::saveToFile(string fileName){
+    try{
     ofstream fcout(fileName.c_str());
     if (!fcout) return;
 
@@ -72,10 +78,15 @@ void net::saveToFile(string fileName){
     }
 
     fcout.close();
+    }
+    catch(...){
+        cout << "FIle is incorrect!";
+    }
 }
 
 vector<double> net::simulate(){
     vector <double> outs;
+    prepareNeurons();
     for (int i=0;i<neurons[neurons.size()-1].size();++i){
         outs.push_back(neurons[neurons.size()-1][i].simulate());
     }
@@ -91,18 +102,18 @@ vector<double> net::simulateFromExample(example ex){
     return this->simulate();
 }
 
-double net::train(example ex){
+double net::train(example ex,double alpha){
     this->simulateFromExample(ex);
 
     for (int i=0;i<neurons[neurons.size()-1].size();++i){
         double t = ex.getOutput(i);
         double outSigma = (t-neurons[neurons.size()-1][i].getOut());
         neurons[neurons.size()-1][i].setSigma(outSigma);
-        neurons[neurons.size()-1][i].correctWeights(false);
+        neurons[neurons.size()-1][i].correctWeights(false,alpha);
     }
     for (int i=neurons.size()-2;i>0;i--){
         for (int j=0;j<neurons[i].size();j++)
-            neurons[i][j].correctWeights(true);
+            neurons[i][j].correctWeights(true,alpha);
     }
     double error = 0;
     for (int i=0;i<neurons[neurons.size()-1].size();++i){
@@ -124,3 +135,14 @@ int net::getLayersCount()
     return neurons.size();
 }
 
+void net::prepareNeurons(){
+    for (int i=0;i<neurons.size();++i)
+        for (int j=0;j<neurons[i].size();++j)
+            neurons[i][j].setCalculated(false);
+}
+
+void net::shakeWeights(){
+    prepareNeurons();
+    for (int i=0;i<neurons[neurons.size()-1].size();++i)
+        neurons[neurons.size()-1][i].shakeWeights(true);
+}

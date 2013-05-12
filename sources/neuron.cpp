@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+#include <cstdlib>
 
 #define ifInRange(value,left,right) if ((value)>=(left)&&(value)<=(right))
 
@@ -9,6 +10,7 @@ using namespace std;
 
 neuron::neuron(){
     out = 0.;
+    calculated = false;
 }
 
 double neuron::getOut(){
@@ -20,7 +22,8 @@ void neuron::addInput(neuron* input,double weight){
 }
 
 double neuron::simulate(){
-    if (inputs.size()==0) return out;
+    if (inputs.size()==0||calculated==true) return out;
+    calculated = true;
     double sum = 0;
     for (unsigned i=0;i<inputs.size();i++)
         sum += inputs[i].first->simulate() * inputs[i].second;
@@ -83,7 +86,7 @@ void neuron::addChildSigma(pair<double,double> sigma){
     this->childSigmas.push_back(sigma);
 }
 
-void neuron::correctWeights(bool recalc){
+void neuron::correctWeights(bool recalc,double alpha){
     if (recalc){
         double sum = 0;
         for (int i=0;i<childSigmas.size();++i)
@@ -96,6 +99,19 @@ void neuron::correctWeights(bool recalc){
     this->childSigmas.resize(0);
 
     for (int i=0;i<inputs.size();i++){
-        inputs[i].second = inputs[i].second + sigma*inputs[i].first->getOut();
+        inputs[i].second = inputs[i].second + alpha*sigma*inputs[i].first->getOut();
     }
+}
+
+void neuron::shakeWeights(bool recursively){
+    if (calculated) return;
+    calculated = true;
+    for (int i=0;i<inputs.size();++i){
+        if (recursively) inputs[i].first->shakeWeights(true);
+        inputs[i].second = rand()%100-50;
+    }
+}
+
+void neuron::setCalculated(bool calculated){
+    this->calculated = calculated;
 }

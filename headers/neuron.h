@@ -14,6 +14,7 @@ private:
     double delta;
     double sigma;
     vector <pair<double,double> > childSigmas;
+    bool calculated;
 
     //private functions
     double outFunction(double sum);
@@ -33,8 +34,9 @@ public:
     void setPosition(int x,int y);
     pair<int,int> getPosition();
     void clearTrainingData();
-    void correctWeights(bool recalc);
+    void correctWeights(bool recalc,double alpha);
     void setSigma(double val);
     void addChildSigma(pair<double,double> sigma);
-
+    void shakeWeights(bool recursively);
+    void setCalculated(bool calculated);
 };

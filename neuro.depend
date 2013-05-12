@@ -3,29 +3,32 @@
 	<iostream>
 	<neuron.h>
 
-1368118222 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
+1368368030 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
 	<neuron.h>
 	<vector>
 	<cmath>
 	<iostream>
+	<cstdlib>
 
-1368115994 /home/yura/Desktop/OLD/neuro/headers/neuron.h
+1368367640 /home/yura/Desktop/OLD/neuro/headers/neuron.h
 	<vector>
 
-1368353814 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
+1368368436 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
 	<iostream>
+	<example.h>
 	<net.h>
 	<algorithm>
 	<cmath>
 	<trainer.h>
+	<sstream>
 
-1368351172 /home/yura/Desktop/OLD/neuro/headers/net.h
+1368368066 /home/yura/Desktop/OLD/neuro/headers/net.h
 	<vector>
 	<neuron.h>
-	<example.h>
 	<string>
+	<example.h>
 
-1368351630 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
+1368369556 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
 	<vector>
 	<string>
 	<net.h>
@@ -35,15 +38,21 @@
 	<queue>
 	<set>
 
-1367684580 /home/yura/Desktop/OLD/neuro/headers/example.h
+1368370285 /home/yura/Desktop/OLD/neuro/headers/example.h
 	<vector>
 	<string>
 
-1368304161 source:/home/yura/Desktop/OLD/neuro/sources/example.cpp
+1368370272 source:/home/yura/Desktop/OLD/neuro/sources/example.cpp
 	<example.h>
 	<fstream>
+	<iostream>
 
-1368354028 /home/yura/Desktop/OLD/neuro/headers/trainer.h
+1368366262 /home/yura/Desktop/OLD/neuro/headers/trainer.h
+	<net.h>
+	<example.h>
 	<vector>
 	<string>
+
+1368366393 source:/home/yura/Desktop/OLD/neuro/sources/trainer.cpp
+	<trainer.h>
 

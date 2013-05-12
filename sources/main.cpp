@@ -36,10 +36,14 @@ int main(int argc,char** args)
             ex.loadFromFile(fileName);
             printVector(network.simulateFromExample(ex));
         } else
+        if (s=="shake"){
+            network.shakeWeights();
+        }
         if (s=="add"){
             cin >> fileName;
-            ex.loadFromFile(fileName);
-            tr.addExample(ex);
+            if (ex.loadFromFile(fileName)){
+                tr.addExample(ex);
+            }
         }else
         if (s=="addRange"){
             int left,right;
@@ -49,7 +53,13 @@ int main(int argc,char** args)
             while (left<=right){
                 stringstream sstm;
                 sstm << left << fileName;
-                ex.loadFromFile(sstm.str());
+                cout << sstm.str();
+                if (ex.loadFromFile(sstm.str())){
+                    tr.addExample(ex);
+                    cout  << " was loaded"<<endl;
+                }
+                else
+                    cout  << " wasn't loaded"<<endl;
                 left++;
                 iter++;
                 if (iter>10000) break;
@@ -61,9 +71,11 @@ int main(int argc,char** args)
         if (s=="train"){
             int limit;
             double error;
-            cin >> limit >> error;
+            double alpha;
+            cin >> limit >> error >> alpha;
             tr.setAllowableError(error);
             tr.setIterationsLimit(limit);
+            tr.setAlpha(alpha);
             tr.startLearning(network);
         }
     cout << endl << "neuro>";

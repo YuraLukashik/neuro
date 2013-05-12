@@ -20,6 +20,6 @@ public:
     int getOuputsCount();
     double getInpunt(int number);
     double getOutput(int number);
-    void loadFromFile(string fileName);
+    bool loadFromFile(string fileName);
 };
 #endif

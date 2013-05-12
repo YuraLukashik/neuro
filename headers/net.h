@@ -24,6 +24,8 @@ public:
     void setConnectionsCount(int count);
     int getConnectionsCount();
     vector<double> simulateFromExample(example ex);
-    double train(example ex);
+    double train(example ex,double alpha);
+    void prepareNeurons();
+    void shakeWeights();
 };
 #endif

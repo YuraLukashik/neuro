@@ -12,12 +12,14 @@ private:
     vector <example> container;
     int limit;
     double error;
+    double alpha;
     //private functions
 public:
     trainer();
     void addExample(example ex);
     void setIterationsLimit(int limit);
     void setAllowableError(double error);
+    void setAlpha(double alpha);
     void clearTrainData();
     string startLearning(net& network);
 };
