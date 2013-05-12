@@ -64,7 +64,10 @@ void net::saveToFile(string fileName){
             neuron* conTo = curr->getInputNeuron(i);
             fcout << conTo->getPosition().first+1 <<" "<<conTo->getPosition().second+1 << " -> ";
             fcout << curr->getPosition().first+1 << " "<<curr->getPosition().second+1 << " : " << curr->getWeight(i) << endl;
-            if (metki.count(conTo)<=0) qu.push(conTo);
+            if (metki.count(conTo)<=0){
+                qu.push(conTo);
+                metki.insert(conTo);
+            }
         }
     }
 
