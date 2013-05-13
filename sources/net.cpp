@@ -93,7 +93,7 @@ vector<double> net::simulate(){
     return outs;
 }
 
-vector<double> net::simulateFromExample(example ex){
+vector<double> net::simulateFromExample(example& ex){
     if (neurons.size()==0) this->simulate();
     if (neurons[0].size()!=ex.getInputsCount()) this->simulate();
     for (int i=0;i<neurons[0].size();++i){
@@ -102,7 +102,7 @@ vector<double> net::simulateFromExample(example ex){
     return this->simulate();
 }
 
-double net::train(example ex,double alpha){
+double net::train(example& ex,double alpha){
     this->simulateFromExample(ex);
 
     for (int i=0;i<neurons[neurons.size()-1].size();++i){

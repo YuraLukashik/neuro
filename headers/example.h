@@ -15,11 +15,11 @@ private:
     //private functions
 public:
     example();
-    example(string fileName);
+    example(string& fileName);
     int getInputsCount();
     int getOuputsCount();
     double getInpunt(int number);
     double getOutput(int number);
-    bool loadFromFile(string fileName);
+    bool loadFromFile(string& fileName);
 };
 #endif

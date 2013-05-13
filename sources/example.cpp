@@ -8,7 +8,7 @@ using namespace std;
 example::example(){
 }
 
-example::example(string fileName){
+example::example(string& fileName){
     this->loadFromFile(fileName);
 }
 
@@ -30,7 +30,7 @@ double example::getOutput(int number){
     return 0.;
 }
 
-bool example::loadFromFile(string fileName){
+bool example::loadFromFile(string& fileName){
     try{
     ifstream fcin(fileName.c_str());
     if (!fcin) return false;

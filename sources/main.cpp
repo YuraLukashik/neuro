@@ -54,7 +54,8 @@ int main(int argc,char** args)
                 stringstream sstm;
                 sstm << left << fileName;
                 cout << sstm.str();
-                if (ex.loadFromFile(sstm.str())){
+                s = sstm.str();
+                if (ex.loadFromFile(s)){
                     tr.addExample(ex);
                     cout  << " was loaded"<<endl;
                 }

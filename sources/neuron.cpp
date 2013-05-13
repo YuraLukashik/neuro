@@ -19,6 +19,7 @@ double neuron::getOut(){
 
 void neuron::addInput(neuron* input,double weight){
     inputs.push_back(make_pair(input,weight));
+    //deltas.push_back(0);
 }
 
 double neuron::simulate(){
@@ -74,7 +75,7 @@ pair<int,int> neuron::getPosition(){
 
 void neuron::clearTrainingData(){
     sigma = 0;
-    delta = 0;
+    //deltas.assign(deltas.size(),0);
     childSigmas.resize(0);
 }
 

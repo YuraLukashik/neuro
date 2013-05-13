@@ -3,7 +3,6 @@
 using namespace std;
 
 class neuron{
-
 private:
     //private data
     vector < pair<neuron*,double> > inputs;
@@ -11,7 +10,7 @@ private:
     pair <int,int> position;
 
     //data for training
-    double delta;
+    //vector<double> deltas;
     double sigma;
     vector <pair<double,double> > childSigmas;
     bool calculated;

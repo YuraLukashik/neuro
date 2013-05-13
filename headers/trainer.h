@@ -16,7 +16,7 @@ private:
     //private functions
 public:
     trainer();
-    void addExample(example ex);
+    void addExample(example& ex);
     void setIterationsLimit(int limit);
     void setAllowableError(double error);
     void setAlpha(double alpha);

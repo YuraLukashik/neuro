@@ -45,9 +45,7 @@
 		<Unit filename="sources/main.cpp" />
 		<Unit filename="sources/net.cpp" />
 		<Unit filename="sources/neuron.cpp" />
-		<Unit filename="sources/trainer.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="sources/trainer.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -1,58 +1,10 @@
 # depslib dependency file v1.0
-1365335601 source:/home/yura/Desktop/neuro/sources/main.cpp
-	<iostream>
-	<neuron.h>
-
-1368368030 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
-	<neuron.h>
-	<vector>
-	<cmath>
-	<iostream>
-	<cstdlib>
-
-1368367640 /home/yura/Desktop/OLD/neuro/headers/neuron.h
-	<vector>
-
-1368368436 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
-	<iostream>
-	<example.h>
-	<net.h>
-	<algorithm>
-	<cmath>
-	<trainer.h>
-	<sstream>
-
-1368368066 /home/yura/Desktop/OLD/neuro/headers/net.h
-	<vector>
-	<neuron.h>
-	<string>
-	<example.h>
-
-1368369556 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
-	<vector>
-	<string>
-	<net.h>
-	<fstream>
-	<sstream>
-	<iostream>
-	<queue>
-	<set>
-
-1368370285 /home/yura/Desktop/OLD/neuro/headers/example.h
-	<vector>
-	<string>
-
-1368370272 source:/home/yura/Desktop/OLD/neuro/sources/example.cpp
+1368390871 source:/home/yura/Desktop/OLD/neuro/sources/example.cpp
 	<example.h>
 	<fstream>
 	<iostream>
 
-1368366262 /home/yura/Desktop/OLD/neuro/headers/trainer.h
-	<net.h>
-	<example.h>
+1368390862 /home/yura/Desktop/OLD/neuro/headers/example.h
 	<vector>
 	<string>
-
-1368366393 source:/home/yura/Desktop/OLD/neuro/sources/trainer.cpp
-	<trainer.h>
 
