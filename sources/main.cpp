@@ -34,7 +34,8 @@ int main(int argc,char** args)
         if (s=="simulate"){
             cin >> fileName;
             ex.loadFromFile(fileName);
-            printVector(network.simulateFromExample(ex));
+            network.simulateFromExample(ex);
+            printVector(network.getOuts());
         } else
         if (s=="shake"){
             network.shakeWeights();

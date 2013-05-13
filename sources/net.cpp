@@ -84,22 +84,20 @@ void net::saveToFile(string fileName){
     }
 }
 
-vector<double> net::simulate(){
-    vector <double> outs;
+void net::simulate(){
     prepareNeurons();
     for (int i=0;i<neurons[neurons.size()-1].size();++i){
-        outs.push_back(neurons[neurons.size()-1][i].simulate());
+        neurons[neurons.size()-1][i].simulate();
     }
-    return outs;
 }
 
-vector<double> net::simulateFromExample(example& ex){
-    if (neurons.size()==0) this->simulate();
-    if (neurons[0].size()!=ex.getInputsCount()) this->simulate();
+void net::simulateFromExample(example& ex){
+    if (neurons.size()==0) { this->simulate(); return;}
+    if (neurons[0].size()!=ex.getInputsCount()) {return this->simulate(); return;}
     for (int i=0;i<neurons[0].size();++i){
         neurons[0][i].setOut(ex.getInpunt(i));
     }
-    return this->simulate();
+    this->simulate();
 }
 
 double net::train(example& ex,double alpha){
@@ -135,6 +133,13 @@ int net::getLayersCount()
     return neurons.size();
 }
 
+vector<double> net::getOuts(){
+    vector <double> outs;
+    for (int i=0;i<neurons[neurons.size()-1].size();++i)
+        outs.push_back(neurons[neurons.size()-1][i].getOut());
+    return outs;
+}
+
 void net::prepareNeurons(){
     for (int i=0;i<neurons.size();++i)
         for (int j=0;j<neurons[i].size();++j)
@@ -146,3 +151,4 @@ void net::shakeWeights(){
     for (int i=0;i<neurons[neurons.size()-1].size();++i)
         neurons[neurons.size()-1][i].shakeWeights(true);
 }
+

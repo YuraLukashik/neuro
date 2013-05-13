@@ -8,3 +8,49 @@
 	<vector>
 	<string>
 
+1368438457 source:/home/yura/Desktop/OLD/neuro/sources/main.cpp
+	<iostream>
+	<example.h>
+	<net.h>
+	<algorithm>
+	<cmath>
+	<trainer.h>
+	<sstream>
+
+1368438309 /home/yura/Desktop/OLD/neuro/headers/net.h
+	<vector>
+	<neuron.h>
+	<string>
+	<example.h>
+
+1368441784 /home/yura/Desktop/OLD/neuro/headers/neuron.h
+	<vector>
+
+1368390917 /home/yura/Desktop/OLD/neuro/headers/trainer.h
+	<net.h>
+	<example.h>
+	<vector>
+	<string>
+
+1368438498 source:/home/yura/Desktop/OLD/neuro/sources/net.cpp
+	<vector>
+	<string>
+	<net.h>
+	<fstream>
+	<sstream>
+	<iostream>
+	<queue>
+	<set>
+
+1368441964 source:/home/yura/Desktop/OLD/neuro/sources/neuron.cpp
+	<neuron.h>
+	<vector>
+	<cmath>
+	<iostream>
+	<cstdlib>
+
+1368437536 source:/home/yura/Desktop/OLD/neuro/sources/trainer.cpp
+	<trainer.h>
+	<algorithm>
+	<iostream>
+

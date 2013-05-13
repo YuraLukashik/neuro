@@ -4,10 +4,10 @@
 	<File name="headers/example.h" open="1" top="0" tabpos="9">
 		<Cursor position="113" topLine="3" />
 	</File>
-	<File name="headers/net.h" open="1" top="0" tabpos="7">
-		<Cursor position="550" topLine="0" />
+	<File name="headers/net.h" open="1" top="0" tabpos="5">
+		<Cursor position="661" topLine="10" />
 	</File>
-	<File name="headers/neuron.h" open="1" top="0" tabpos="5">
+	<File name="headers/neuron.h" open="1" top="0" tabpos="6">
 		<Cursor position="203" topLine="0" />
 	</File>
 	<File name="headers/trainer.h" open="1" top="0" tabpos="2">
@@ -17,15 +17,15 @@
 		<Cursor position="135" topLine="19" />
 	</File>
 	<File name="sources/main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="1157" topLine="42" />
+		<Cursor position="850" topLine="27" />
 	</File>
 	<File name="sources/net.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2650" topLine="103" />
+		<Cursor position="3529" topLine="130" />
 	</File>
-	<File name="sources/neuron.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="329" topLine="17" />
+	<File name="sources/neuron.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="305" topLine="17" />
 	</File>
-	<File name="sources/trainer.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="932" topLine="25" />
+	<File name="sources/trainer.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="672" topLine="28" />
 	</File>
 </CodeBlocks_layout_file>

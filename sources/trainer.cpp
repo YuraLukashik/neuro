@@ -1,5 +1,6 @@
 #include <trainer.h>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
@@ -42,6 +43,7 @@ string trainer::startLearning(net& network){
             currError += network.train(container[seq[i]],this->alpha);
         }
         iterations++;
+        if (iterations%100==0) cout << iterations << endl;
     }
     return " ";
 }

@@ -19,7 +19,11 @@ double neuron::getOut(){
 
 void neuron::addInput(neuron* input,double weight){
     inputs.push_back(make_pair(input,weight));
-    //deltas.push_back(0);
+    input->addOutput(this,weight);
+}
+
+void neuron::addOutput(neuron* output,double weight){
+        outputs.push_back(make_pair(output,weight));
 }
 
 double neuron::simulate(){
@@ -75,30 +79,20 @@ pair<int,int> neuron::getPosition(){
 
 void neuron::clearTrainingData(){
     sigma = 0;
-    //deltas.assign(deltas.size(),0);
-    childSigmas.resize(0);
 }
 
 void neuron::setSigma(double val){
     sigma = val;
 }
 
-void neuron::addChildSigma(pair<double,double> sigma){
-    this->childSigmas.push_back(sigma);
-}
 
 void neuron::correctWeights(bool recalc,double alpha){
     if (recalc){
         double sum = 0;
-        for (int i=0;i<childSigmas.size();++i)
-            sum += childSigmas[i].first*childSigmas[i].second;
+        for (int i=0;i<outputs.size();++i)
+            sum += outputs[i].first->getSigma()*outputs[i].second;
         this->sigma = this->out*(1-this->out)*sum;
     }
-    for (int i=0;i<inputs.size();++i){
-        inputs[i].first->addChildSigma(make_pair(this->sigma,inputs[i].second));
-    }
-    this->childSigmas.resize(0);
-
     for (int i=0;i<inputs.size();i++){
         inputs[i].second = inputs[i].second + alpha*sigma*inputs[i].first->getOut();
     }
@@ -115,4 +109,8 @@ void neuron::shakeWeights(bool recursively){
 
 void neuron::setCalculated(bool calculated){
     this->calculated = calculated;
+}
+
+double neuron::getSigma(){
+    return sigma;
 }

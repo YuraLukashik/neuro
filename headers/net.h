@@ -20,12 +20,13 @@ public:
     void loadFromFile(string fileName);
     void saveToFile(string fileName);
     int getLayersCount();
-    vector<double> simulate();
+    void simulate();
     void setConnectionsCount(int count);
     int getConnectionsCount();
-    vector<double> simulateFromExample(example& ex);
+    void simulateFromExample(example& ex);
     double train(example& ex,double alpha);
     void prepareNeurons();
     void shakeWeights();
+    vector<double> getOuts();
 };
 #endif
