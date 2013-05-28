@@ -24,14 +24,17 @@ int main(int argc,char** args)
     while (cin>>s){
         if (s=="exit") break; else
         if (s=="load"){
+            cout << "fileName = ";
             cin >> fileName;
             network.loadFromFile(fileName);
         } else
         if (s=="save"){
+            cout << "fileName = ";
             cin >> fileName;
             network.saveToFile(fileName);
         } else
         if (s=="simulate"){
+            cout << "fileName = ";
             cin >> fileName;
             ex.loadFromFile(fileName);
             network.simulateFromExample(ex);
@@ -41,6 +44,7 @@ int main(int argc,char** args)
             network.shakeWeights();
         }
         if (s=="add"){
+            cout << "fileName = ";
             cin >> fileName;
             if (ex.loadFromFile(fileName)){
                 tr.addExample(ex);
@@ -48,7 +52,11 @@ int main(int argc,char** args)
         }else
         if (s=="addRange"){
             int left,right;
-            cin >> left >> right;
+            cout << "from ";
+            cin >> left ;
+            cout << "to";
+            cin >> right;
+            cout << "extension=";
             cin >> fileName;
             int iter = 0;
             while (left<=right){
@@ -74,11 +82,17 @@ int main(int argc,char** args)
             int limit;
             double error;
             double alpha;
-            cin >> limit >> error >> alpha;
+            cout << "max number of iterations = "; cin >> limit;
+            cout << "allowable error = "; cin >> error;
+            cout << "learning coeficient = "; cin >> alpha;
             tr.setAllowableError(error);
             tr.setIterationsLimit(limit);
             tr.setAlpha(alpha);
             tr.startLearning(network);
+        }else
+        if (s=="help"){
+            cout << "commands:" <<endl<< "load"<<endl<<"save"<<endl<<"exit"<<endl<<"simulate"<<endl<<"shake"<<endl;
+            cout << "add"<<endl<<"addRange"<<endl<<"clear"<<endl<<"train"<<endl<<"help";
         }
     cout << endl << "neuro>";
     }
